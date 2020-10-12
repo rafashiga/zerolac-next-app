@@ -3,6 +3,7 @@ const theme = {
     background: '#fff',
     text: '#000',
     primary: '#25BCF7',
+    secondary: '#606060',
   },
   screen: {
     desktop: '900px',

@@ -28,7 +28,9 @@ export const Title = styled.h1`
 
 export const Description = styled.h3`
   font-size: ${rem(24)};
-  font-weight: 100;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  color: ${({ theme }) => theme.colors.secondary};
 
   span {
     color: ${({ theme }) => theme.colors.primary};

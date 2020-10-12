@@ -8,8 +8,10 @@ export const Nav = styled.nav`
   display: flex;
   flex-direction: row;
   align-items: center;
+  border-bottom: 2px solid #f0f0f0;
+  /* box-shadow: 0 4px 12px -9px black; */
   justify-content: space-between;
-  box-shadow: 0 4px 12px -9px black;
+  z-index: 9;
 
   .nav__logo {
     font-family: 'Pacifico', cursive;
@@ -57,5 +59,10 @@ export const NavItem = styled.li`
       color: ${props => props.theme.colors.primary};
       border-bottom: 4px solid ${props => props.theme.colors.primary};
     }
+  }
+
+  .nav__item.active {
+    color: ${props => props.theme.colors.primary};
+    border-bottom: 4px solid ${props => props.theme.colors.primary};
   }
 `

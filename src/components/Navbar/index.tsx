@@ -1,9 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
 
 import { Nav, Container, NavList, NavItem } from './styles'
 
 const Navbar: React.FC = () => {
+  const [currentHash, setCurrentHash] = useState('')
+
+  const handleNavLink = (hash: string) => {
+    setCurrentHash(hash)
+    document.getElementById('btn-' + hash)?.focus()
+  }
+
   return (
     <Nav>
       <Container>
@@ -13,32 +20,74 @@ const Navbar: React.FC = () => {
         <NavList>
           <NavItem>
             <Link href="/#inicio">
-              <a className="nav__item">início</a>
+              <a
+                onClick={() => handleNavLink('inicio')}
+                className={`nav__item  ${
+                  currentHash === 'inicio' ? 'active' : ''
+                }`}
+              >
+                início
+              </a>
             </Link>
           </NavItem>
           <NavItem>
             <Link href="/#apresentacao">
-              <a className="nav__item">apresentação</a>
+              <a
+                onClick={() => handleNavLink('apresentacao')}
+                className={`nav__item  ${
+                  currentHash === 'apresentacao' ? 'active' : ''
+                }`}
+              >
+                apresentação
+              </a>
             </Link>
           </NavItem>
           <NavItem>
             <Link href="/#leite">
-              <a className="nav__item">leite</a>
+              <a
+                onClick={() => handleNavLink('leite')}
+                className={`nav__item  ${
+                  currentHash === 'leite' ? 'active' : ''
+                }`}
+              >
+                leite
+              </a>
             </Link>
           </NavItem>
           <NavItem>
             <Link href="/#intolerancia">
-              <a className="nav__item">intolerância</a>
+              <a
+                onClick={() => handleNavLink('intolerancia')}
+                className={`nav__item  ${
+                  currentHash === 'intolerancia' ? 'active' : ''
+                }`}
+              >
+                intolerância
+              </a>
             </Link>
           </NavItem>
           <NavItem>
             <Link href="/#processo">
-              <a className="nav__item">processo</a>
+              <a
+                onClick={() => handleNavLink('processo')}
+                className={`nav__item  ${
+                  currentHash === 'processo' ? 'active' : ''
+                }`}
+              >
+                processo
+              </a>
             </Link>
           </NavItem>
           <NavItem>
             <Link href="/#rotulo">
-              <a className="nav__item">rótulo</a>
+              <a
+                onClick={() => handleNavLink('rotulo')}
+                className={`nav__item  ${
+                  currentHash === 'rotulo' ? 'active' : ''
+                }`}
+              >
+                rótulo
+              </a>
             </Link>
           </NavItem>
         </NavList>

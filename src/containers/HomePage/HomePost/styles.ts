@@ -3,6 +3,22 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   background: #ff0f;
+
+  &.gray {
+    background: #f3f4f5;
+  }
+
+  &.white {
+    background: #fff;
+  }
+
+  &.first {
+    padding-top: 3rem;
+  }
+
+  &.last {
+    padding-bottom: 4rem;
+  }
 `
 
 export const Content = styled.div`
@@ -45,8 +61,10 @@ export const Title = styled.h2`
 `
 
 export const Description = styled.p`
-  font-size: ${rem(18)};
+  font-size: ${rem(19)};
+  font-weight: 300;
   line-height: 1.75rem;
+  margin-bottom: 2rem;
 
   @media (min-width: ${({ theme }) => theme.screen.desktop}) {
     line-height: 1.75rem;

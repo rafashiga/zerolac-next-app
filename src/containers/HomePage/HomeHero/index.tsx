@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from '../../../components/Button'
 import { Zerolac } from '../../../models/zerolac'
 
 import {
@@ -22,6 +23,9 @@ const HomeHero: React.FC<HomeHeroProps> = ({ data }) => {
         <Information>
           <Title>Zerolac</Title>
           <Description>{data.shortDescription}</Description>
+          <Button id="btn-inicio" type="button">
+            saiba mais
+          </Button>
         </Information>
         <ImageContainer>
           <Image />
