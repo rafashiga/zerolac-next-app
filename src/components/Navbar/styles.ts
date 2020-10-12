@@ -2,7 +2,6 @@ import { rem } from 'polished'
 import styled from 'styled-components'
 
 export const Nav = styled.nav`
-  position: fixed;
   background: #fff;
   width: 100%;
   display: flex;
@@ -19,6 +18,10 @@ export const Nav = styled.nav`
     font-weight: 400;
     color: ${({ theme }) => theme.colors.primary};
     text-decoration: none;
+  }
+
+  @media (min-width: ${props => props.theme.screen.desktop}) {
+    position: fixed;
   }
 `
 
