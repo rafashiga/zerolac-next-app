@@ -6,9 +6,11 @@ export const Container = styled.div`
 `
 
 export const Content = styled.div`
+  width: ${({ theme }) => theme.container.mobile};
   margin: 0 auto;
   display: flex;
   align-items: center;
+  padding: ${rem(120)} 0;
 
   @media (min-width: ${({ theme }) => theme.screen.desktop}) {
     min-height: 90vh;
@@ -25,9 +27,16 @@ export const Title = styled.h1`
 `
 
 export const Description = styled.h3`
-  width: 35%;
   font-size: ${rem(24)};
   font-weight: 100;
+
+  span {
+    color: ${({ theme }) => theme.colors.primary};
+  }
+
+  @media (min-width: ${({ theme }) => theme.screen.desktop}) {
+    width: 35%;
+  }
 `
 
 export const ImageContainer = styled.div`

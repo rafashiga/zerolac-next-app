@@ -1,4 +1,5 @@
 import React from 'react'
+import { Zerolac } from '../../../models/zerolac'
 
 import {
   Container,
@@ -11,22 +12,22 @@ import {
 } from './styles'
 
 interface HomePostProps {
-  title: string
-  description: string
-  image: string
+  post: Zerolac
+  id: string
+  position: string
 }
 
-const HomePost: React.FC<HomePostProps> = ({ title, description, image }) => {
+const HomePost: React.FC<HomePostProps> = ({ post, position, id }) => {
   return (
-    <Container>
-      <Content>
-        <Information>
-          <Title>{title}</Title>
-          <Description>{description}</Description>
-        </Information>
+    <Container id={id}>
+      <Content className={position}>
         <ImageContainer>
-          <Image src={image} alt={title} />
+          <Image src={post.mainImage.formats.large.url} alt={post.title} />
         </ImageContainer>
+        <Information>
+          <Title>{post.title}</Title>
+          <Description>{post.shortDescription}</Description>
+        </Information>
       </Content>
     </Container>
   )

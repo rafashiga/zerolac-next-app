@@ -17,7 +17,7 @@ interface HomeHeroProps {
 
 const HomeHero: React.FC<HomeHeroProps> = ({ data }) => {
   return (
-    <Container>
+    <Container id="inicio">
       <Content>
         <Information>
           <Title>Zerolac</Title>

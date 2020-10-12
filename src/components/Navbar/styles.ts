@@ -9,6 +9,7 @@ export const Nav = styled.nav`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  box-shadow: 0 4px 12px -9px black;
 
   .nav__logo {
     font-family: 'Pacifico', cursive;
