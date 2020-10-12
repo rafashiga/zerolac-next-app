@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import ReactGA from 'react-ga'
 import { AppProps } from 'next/app'
 import { ThemeProvider } from 'styled-components'
 import 'aos/dist/aos.css'
@@ -10,6 +11,12 @@ import Footer from '../components/Footer'
 import Tabbar from '../components/Tabbar'
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
+  ReactGA.initialize('UA-149483264-4')
+
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search)
+  }, [])
+
   return (
     <ThemeProvider theme={theme}>
       <Navbar />

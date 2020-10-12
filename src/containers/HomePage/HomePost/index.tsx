@@ -12,6 +12,7 @@ import {
   ImageContainer,
   Image,
 } from './styles'
+import ButtonLink from '../../../components/ButtonLink'
 
 interface HomePostProps {
   post: Zerolac
@@ -50,11 +51,9 @@ const HomePost: React.FC<HomePostProps> = ({
             dangerouslySetInnerHTML={{ __html: post.shortDescription }}
           />
           {post.longDescription ? (
-            <Link href={post.name}>
-              <a id={`btn-${id}`} className="link link--primary">
-                saiba mais
-              </a>
-            </Link>
+            <ButtonLink id={`btn-${id}`} href={post.name}>
+              saiba mais
+            </ButtonLink>
           ) : null}
         </Information>
       </Content>

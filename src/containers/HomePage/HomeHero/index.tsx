@@ -1,5 +1,4 @@
 import React from 'react'
-import Button from '../../../components/Button'
 import { Zerolac } from '../../../models/zerolac'
 import heroImg from '../../../assets/hero.png'
 
@@ -12,6 +11,7 @@ import {
   ImageContainer,
   Image,
 } from './styles'
+import ButtonLink from '../../../components/ButtonLink'
 
 interface HomeHeroProps {
   data: Zerolac
@@ -24,9 +24,9 @@ const HomeHero: React.FC<HomeHeroProps> = ({ data }) => {
         <Information>
           <Title>Zerolac</Title>
           <Description>{data.shortDescription}</Description>
-          <Button id="btn-inicio" type="button">
+          <ButtonLink id="btn-inicio" href="/#apresentacao">
             saiba mais
-          </Button>
+          </ButtonLink>
         </Information>
         <ImageContainer>
           <Image
