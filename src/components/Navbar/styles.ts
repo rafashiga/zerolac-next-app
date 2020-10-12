@@ -53,7 +53,7 @@ export const NavItem = styled.li`
     cursor: pointer;
     padding: 0.85rem 0;
     font-size: 1.125rem;
-    color: #000;
+    color: #606060;
     font-weight: 700;
     transition: color 0.2s;
     text-decoration: none;

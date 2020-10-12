@@ -8,17 +8,22 @@ export const Container = styled.div`
 export const Content = styled.div`
   width: ${({ theme }) => theme.container.mobile};
   margin: 0 auto;
-  display: flex;
-  align-items: center;
+
   padding: ${rem(120)} 0;
 
   @media (min-width: ${({ theme }) => theme.screen.desktop}) {
     min-height: 90vh;
+    display: flex;
+    align-items: center;
     width: ${({ theme }) => theme.container.desktop};
   }
 `
 
-export const Information = styled.div``
+export const Information = styled.div`
+  @media (min-width: ${({ theme }) => theme.screen.desktop}) {
+    width: 35%;
+  }
+`
 
 export const Title = styled.h1`
   font-family: 'Pacifico', cursive;
@@ -37,12 +42,18 @@ export const Description = styled.h3`
   }
 
   @media (min-width: ${({ theme }) => theme.screen.desktop}) {
-    width: 35%;
+    width: 100%;
   }
 `
 
 export const ImageContainer = styled.div`
-  max-width: ${rem(560)};
+  margin-top: 4.5rem;
+  @media (min-width: ${({ theme }) => theme.screen.desktop}) {
+    margin: 0;
+    width: 65%;
+  }
 `
 
-export const Image = styled.img``
+export const Image = styled.img`
+  width: 100%;
+`

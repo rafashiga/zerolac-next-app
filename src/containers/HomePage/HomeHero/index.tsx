@@ -1,6 +1,7 @@
 import React from 'react'
 import Button from '../../../components/Button'
 import { Zerolac } from '../../../models/zerolac'
+import heroImg from '../../../assets/hero.png'
 
 import {
   Container,
@@ -28,7 +29,11 @@ const HomeHero: React.FC<HomeHeroProps> = ({ data }) => {
           </Button>
         </Information>
         <ImageContainer>
-          <Image />
+          <Image
+            src={heroImg}
+            title="Alimento vetor criado por pch.vector - br.freepik.com"
+            alt="Alimento vetor criado por pch.vector - br.freepik.com"
+          />
         </ImageContainer>
       </Content>
     </Container>
