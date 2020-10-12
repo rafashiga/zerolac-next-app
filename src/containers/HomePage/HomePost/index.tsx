@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import Link from 'next/link'
 import AOS from 'aos'
 import { Zerolac } from '../../../models/zerolac'
 
@@ -11,7 +12,6 @@ import {
   ImageContainer,
   Image,
 } from './styles'
-import Button from '../../../components/Button'
 
 interface HomePostProps {
   post: Zerolac
@@ -50,9 +50,11 @@ const HomePost: React.FC<HomePostProps> = ({
             dangerouslySetInnerHTML={{ __html: post.shortDescription }}
           />
           {post.longDescription ? (
-            <Button id={`btn-${id}`} type="button">
-              saiba mais
-            </Button>
+            <Link href={post.name}>
+              <a id={`btn-${id}`} className="link link--primary">
+                saiba mais
+              </a>
+            </Link>
           ) : null}
         </Information>
       </Content>

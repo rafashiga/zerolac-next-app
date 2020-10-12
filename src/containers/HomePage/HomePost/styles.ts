@@ -1,4 +1,4 @@
-import { rem } from 'polished'
+import { darken, rem } from 'polished'
 import styled from 'styled-components'
 
 export const Container = styled.div`
@@ -45,6 +45,28 @@ export const Content = styled.div`
 
 export const Information = styled.div`
   margin-top: 2rem;
+
+  .link {
+    padding: 0.5rem 1rem;
+    font-size: ${rem(19)};
+    color: #fff;
+    cursor: pointer;
+    background: ${({ theme }) => theme.colors.primary};
+    border: 1px solid ${({ theme }) => darken(0.04, theme.colors.primary)};
+    transition: background 0.2s;
+    text-decoration: none;
+
+    :hover,
+    :active {
+      background: ${({ theme }) => darken(0.09, theme.colors.primary)};
+    }
+
+    :focus {
+      border: 1px solid #000;
+      background: ${({ theme }) => darken(0.09, theme.colors.primary)};
+    }
+  }
+
   @media (min-width: ${({ theme }) => theme.screen.desktop}) {
     margin-top: 0;
     width: 45%;
