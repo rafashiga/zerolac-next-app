@@ -8,15 +8,23 @@ type ImageDiv = {
 
 export const Image = styled.div<ImageDiv>`
   width: 100%;
-  height: ${rem(300)};
+  height: ${rem(160)};
   background-image: url(${props => props.backgroundImage});
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center;
+
+  @media (min-width: ${({ theme }) => theme.screen.desktop}) {
+    height: ${rem(300)};
+  }
 `
 
 export const Container = styled.div`
-  padding: ${rem(120)} 0;
+  padding: ${rem(64)} 0;
+
+  @media (min-width: ${({ theme }) => theme.screen.desktop}) {
+    padding: ${rem(120)} 0;
+  }
 `
 
 export const Content = styled.div`
@@ -36,8 +44,12 @@ export const Markdown = styled(ReactMarkdown)`
   line-height: 1.75rem;
 
   img {
-    max-width: ${rem(400)};
+    max-width: 90%;
     display: block;
     margin: 2rem auto;
+
+    @media (min-width: ${({ theme }) => theme.screen.desktop}) {
+      max-width: ${rem(400)};
+    }
   }
 `
