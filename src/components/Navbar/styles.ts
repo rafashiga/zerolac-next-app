@@ -1,5 +1,6 @@
 import { rem } from 'polished'
 import styled from 'styled-components'
+import Scrollspy from 'react-scrollspy'
 
 export const Nav = styled.nav`
   background: #fff;
@@ -40,7 +41,7 @@ export const Container = styled.div`
   }
 `
 
-export const NavList = styled.ul`
+export const NavList = styled(Scrollspy)`
   list-style: none;
   display: flex;
   align-items: center;
@@ -65,6 +66,12 @@ export const NavItem = styled.li`
   }
 
   .nav__item.active {
+    color: ${props => props.theme.colors.primary};
+    border-bottom: 4px solid ${props => props.theme.colors.primary};
+  }
+
+  &.is-current a {
+    padding: 0.85rem 0;
     color: ${props => props.theme.colors.primary};
     border-bottom: 4px solid ${props => props.theme.colors.primary};
   }

@@ -1,3 +1,4 @@
+import Scrollspy from 'react-scrollspy'
 import { rem } from 'polished'
 import styled from 'styled-components'
 
@@ -25,7 +26,7 @@ export const Content = styled.div`
   overflow-y: scroll;
 `
 
-export const List = styled.ul`
+export const List = styled(Scrollspy)`
   list-style: none;
   display: flex;
   justify-content: space-between;
@@ -46,7 +47,7 @@ export const Item = styled.li`
     padding: 0.5rem;
   }
 
-  a.active {
+  &.active a {
     background: #000;
     color: #fff;
   }

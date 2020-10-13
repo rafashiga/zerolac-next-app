@@ -16,13 +16,20 @@ const Tabbar: React.FC = () => {
   return (
     <Container>
       <Content>
-        <List>
+        <List
+          items={[
+            'inicio',
+            'apresentacao',
+            'leite',
+            'intolerancia',
+            'processo',
+            'rotulo',
+          ]}
+          currentClassName="active"
+        >
           <Item>
             <Link href="/#inicio">
-              <a
-                onClick={() => handleNavLink('inicio')}
-                className={`${currentHash === 'inicio' ? 'active' : ''}`}
-              >
+              <a onClick={() => handleNavLink('inicio')}>
                 <FiHome />
                 início
               </a>
@@ -30,30 +37,21 @@ const Tabbar: React.FC = () => {
           </Item>
           <Item>
             <Link href="/#apresentacao">
-              <a
-                onClick={() => handleNavLink('apresentacao')}
-                className={`${currentHash === 'apresentacao' ? 'active' : ''}`}
-              >
+              <a onClick={() => handleNavLink('apresentacao')}>
                 <FiInfo /> apresentação
               </a>
             </Link>
           </Item>
           <Item>
             <Link href="/#leite">
-              <a
-                onClick={() => handleNavLink('leite')}
-                className={`${currentHash === 'leite' ? 'active' : ''}`}
-              >
+              <a onClick={() => handleNavLink('leite')}>
                 <FiCoffee /> leite
               </a>
             </Link>
           </Item>
           <Item>
             <Link href="/#intolerancia">
-              <a
-                onClick={() => handleNavLink('intolerancia')}
-                className={`${currentHash === 'intolerancia' ? 'active' : ''}`}
-              >
+              <a onClick={() => handleNavLink('intolerancia')}>
                 <MdBlock />
                 intolerância
               </a>
@@ -61,20 +59,14 @@ const Tabbar: React.FC = () => {
           </Item>
           <Item>
             <Link href="/#processo">
-              <a
-                onClick={() => handleNavLink('processo')}
-                className={`${currentHash === 'processo' ? 'active' : ''}`}
-              >
+              <a onClick={() => handleNavLink('processo')}>
                 <FiTruck /> processo
               </a>
             </Link>
           </Item>
           <Item>
             <Link href="/#rotulo">
-              <a
-                onClick={() => handleNavLink('rotulo')}
-                className={`${currentHash === 'rotulo' ? 'active' : ''}`}
-              >
+              <a onClick={() => handleNavLink('rotulo')}>
                 <FiBox /> rótulo
               </a>
             </Link>

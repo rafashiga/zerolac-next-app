@@ -17,15 +17,20 @@ const Navbar: React.FC = () => {
         <Link href="/">
           <a className="nav__logo">Zerolac</a>
         </Link>
-        <NavList>
+        <NavList
+          items={[
+            'inicio',
+            'apresentacao',
+            'leite',
+            'intolerancia',
+            'processo',
+            'rotulo',
+          ]}
+          currentClassName="is-current"
+        >
           <NavItem>
             <Link href="/#inicio">
-              <a
-                onClick={() => handleNavLink('inicio')}
-                className={`nav__item  ${
-                  currentHash === 'inicio' ? 'active' : ''
-                }`}
-              >
+              <a onClick={() => handleNavLink('inicio')} className="nav__item">
                 início
               </a>
             </Link>
@@ -34,9 +39,7 @@ const Navbar: React.FC = () => {
             <Link href="/#apresentacao">
               <a
                 onClick={() => handleNavLink('apresentacao')}
-                className={`nav__item  ${
-                  currentHash === 'apresentacao' ? 'active' : ''
-                }`}
+                className="nav__item"
               >
                 apresentação
               </a>
@@ -44,12 +47,7 @@ const Navbar: React.FC = () => {
           </NavItem>
           <NavItem>
             <Link href="/#leite">
-              <a
-                onClick={() => handleNavLink('leite')}
-                className={`nav__item  ${
-                  currentHash === 'leite' ? 'active' : ''
-                }`}
-              >
+              <a onClick={() => handleNavLink('leite')} className="nav__item">
                 leite
               </a>
             </Link>
@@ -58,9 +56,7 @@ const Navbar: React.FC = () => {
             <Link href="/#intolerancia">
               <a
                 onClick={() => handleNavLink('intolerancia')}
-                className={`nav__item  ${
-                  currentHash === 'intolerancia' ? 'active' : ''
-                }`}
+                className="nav__item"
               >
                 intolerância
               </a>
@@ -70,9 +66,7 @@ const Navbar: React.FC = () => {
             <Link href="/#processo">
               <a
                 onClick={() => handleNavLink('processo')}
-                className={`nav__item  ${
-                  currentHash === 'processo' ? 'active' : ''
-                }`}
+                className="nav__item"
               >
                 processo
               </a>
@@ -80,12 +74,7 @@ const Navbar: React.FC = () => {
           </NavItem>
           <NavItem>
             <Link href="/#rotulo">
-              <a
-                onClick={() => handleNavLink('rotulo')}
-                className={`nav__item  ${
-                  currentHash === 'rotulo' ? 'active' : ''
-                }`}
-              >
+              <a onClick={() => handleNavLink('rotulo')} className="nav__item">
                 rótulo
               </a>
             </Link>
