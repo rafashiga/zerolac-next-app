@@ -26,6 +26,7 @@ export const Information = styled.div`
 `
 
 export const Title = styled.h1`
+  color: ${({ theme }) => theme.colors.secondary_dark};
   font-family: 'Pacifico', cursive;
   font-size: 3.25rem;
   margin-bottom: 2rem;

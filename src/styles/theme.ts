@@ -4,6 +4,7 @@ const theme = {
     text: '#000',
     primary: '#25BCF7',
     secondary: '#606060',
+    secondary_dark: '#58595b',
   },
   screen: {
     desktop: '900px',

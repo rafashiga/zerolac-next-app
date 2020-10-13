@@ -29,11 +29,13 @@ const HomeHero: React.FC<HomeHeroProps> = ({ data }) => {
           </ButtonLink>
         </Information>
         <ImageContainer>
-          <Image
-            src={heroImg}
-            title="Alimento vetor criado por pch.vector - br.freepik.com"
-            alt="Alimento vetor criado por pch.vector - br.freepik.com"
-          />
+          <a href="https://www.freepik.com" target="_blank">
+            <Image
+              src={heroImg}
+              title="designed by Pch.vector - Freepik.com"
+              alt="designed by Pch.vector - Freepik.com"
+            />
+          </a>
         </ImageContainer>
       </Content>
     </Container>
