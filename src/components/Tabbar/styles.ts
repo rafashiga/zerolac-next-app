@@ -23,7 +23,11 @@ export const Content = styled.div`
   width: 90%;
   display: flex;
   align-items: center;
-  overflow-y: scroll;
+  overflow-y: hidden;
+
+  @media (max-width: 470px) {
+    overflow-x: scroll;
+  }
 `
 
 export const List = styled(Scrollspy)`
