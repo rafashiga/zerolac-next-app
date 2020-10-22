@@ -29,7 +29,7 @@ const HomeHero: React.FC<HomeHeroProps> = ({ data }) => {
           </ButtonLink>
         </Information>
         <ImageContainer>
-          <a href="https://www.freepik.com" target="_blank">
+          <a href="https://www.freepik.com/pch-vector" target="_blank">
             <Image
               src={heroImg}
               title="designed by Pch.vector - Freepik.com"
