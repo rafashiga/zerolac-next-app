@@ -5,10 +5,6 @@ export const Container = styled.div`
   width: 100%;
   background: #000;
   color: #fff;
-
-  @media (max-width: ${props => props.theme.screen.desktop}) {
-    margin-bottom: ${rem(64)};
-  }
 `
 
 export const Content = styled.div`

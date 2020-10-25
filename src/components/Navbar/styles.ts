@@ -9,9 +9,9 @@ export const Nav = styled.nav`
   flex-direction: row;
   align-items: center;
   border-bottom: 2px solid #f0f0f0;
-  /* box-shadow: 0 4px 12px -9px black; */
   justify-content: space-between;
   z-index: 9;
+  position: fixed;
 
   .nav__logo {
     font-family: 'Pacifico', cursive;
@@ -20,13 +20,12 @@ export const Nav = styled.nav`
     color: ${({ theme }) => theme.colors.primary};
     text-decoration: none;
   }
-
-  @media (min-width: ${props => props.theme.screen.desktop}) {
-    position: fixed;
-  }
 `
 
 export const Container = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: ${({ theme }) => theme.container.mobile};
   margin: 0 auto;
   position: relative;
@@ -34,17 +33,19 @@ export const Container = styled.div`
   height: ${rem(56)};
 
   @media (min-width: ${props => props.theme.screen.desktop}) {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     width: ${props => props.theme.container.desktop};
   }
 `
 
 export const NavList = styled(Scrollspy)`
   list-style: none;
-  display: flex;
-  align-items: center;
+
+  display: none;
+
+  @media (min-width: ${props => props.theme.screen.desktop}) {
+    display: flex;
+    align-items: center;
+  }
 `
 
 export const NavItem = styled.li`
@@ -74,5 +75,16 @@ export const NavItem = styled.li`
     padding: 0.85rem 0;
     color: ${props => props.theme.colors.primary};
     border-bottom: 4px solid ${props => props.theme.colors.primary};
+  }
+`
+
+export const SidebarButton = styled.button`
+  font-size: 1.25rem;
+  border: none;
+  padding: 0.5rem;
+  background: none;
+
+  @media (min-width: ${({ theme }) => theme.screen.desktop}) {
+    display: none;
   }
 `
