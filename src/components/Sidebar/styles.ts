@@ -6,17 +6,32 @@ export const Nav = styled.div`
   top: 0;
   right: 0;
   bottom: 0;
-  min-width: 40vw;
+  min-width: 45vw;
   height: 100vh;
   background: #fff;
   border-left: 1px solid #f0f0f0;
   box-shadow: 0 4px 15px -9px black;
   overflow: hidden;
-  transition: 0.5s;
+  transition: all 0.5s;
   z-index: 1;
+
+  &.open {
+    animation: moveInRight 0.75s ease-in;
+  }
 
   @media (min-width: ${({ theme }) => theme.screen.desktop}) {
     display: none;
+  }
+
+  @keyframes moveInRight {
+    0% {
+      opacity: 0;
+      transform: translateX(70vw);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0);
+    }
   }
 `
 

@@ -95,7 +95,7 @@ const Navbar: React.FC = () => {
             <FaIcons.FaBars />
           </SidebarButton>
         </Container>
-        {isOpenSidebar && <Sidebar toggleSidebar={showSidebar} />}
+        <Sidebar toggleSidebar={showSidebar} isOpen={isOpenSidebar} />
       </Nav>
     </>
   )

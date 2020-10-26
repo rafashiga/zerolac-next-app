@@ -7,82 +7,81 @@ import { MdBlock } from 'react-icons/md'
 import { Nav, CloseButton, SidebarList, SidebarItem } from './styles'
 
 interface SidebarProps {
+  isOpen: boolean
   toggleSidebar: () => void
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ toggleSidebar }) => {
-  const [isOpen, setIsOpen] = useState(false)
-
-  const close = () => {
-    setIsOpen(false)
-  }
-
+const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
   return (
-    <Nav>
-      <SidebarList
-        items={[
-          '',
-          'inicio',
-          'apresentacao',
-          'leite',
-          'intolerancia',
-          'processo',
-          'rotulo',
-        ]}
-        currentClassName="active"
-        offset={-64}
-      >
-        <SidebarItem>
-          <CloseButton onClick={toggleSidebar}>
-            <AiIcons.AiOutlineClose />
-          </CloseButton>
-        </SidebarItem>
-        <SidebarItem>
-          <Link href="/#inicio">
-            <a className="sidebar__link" onClick={toggleSidebar}>
-              <FiIcons.FiHome className="icon" /> início
-            </a>
-          </Link>
-        </SidebarItem>
-        <SidebarItem>
-          <Link href="/#apresentacao">
-            <a className="sidebar__link" onClick={toggleSidebar}>
-              <FiIcons.FiInfo className="icon" />
-              apresentação
-            </a>
-          </Link>
-        </SidebarItem>
-        <SidebarItem>
-          <Link href="/#leite">
-            <a className="sidebar__link" onClick={toggleSidebar}>
-              <FiIcons.FiCoffee className="icon" /> leite
-            </a>
-          </Link>
-        </SidebarItem>
-        <SidebarItem>
-          <Link href="/#intolerancia">
-            <a className="sidebar__link" onClick={toggleSidebar}>
-              <MdBlock className="icon" /> intolerância
-            </a>
-          </Link>
-        </SidebarItem>
-        <SidebarItem>
-          <Link href="/#processo">
-            <a className="sidebar__link" onClick={toggleSidebar}>
-              <FiIcons.FiTruck className="icon" /> processo
-            </a>
-          </Link>
-        </SidebarItem>
-        <SidebarItem>
-          <Link href="/#rotulo">
-            <a className="sidebar__link" onClick={toggleSidebar}>
-              <FiIcons.FiBox className="icon" />
-              rótulo
-            </a>
-          </Link>
-        </SidebarItem>
-      </SidebarList>
-    </Nav>
+    <>
+      {isOpen && (
+        <Nav className={isOpen ? 'open' : ''}>
+          <SidebarList
+            items={[
+              '',
+              'inicio',
+              'apresentacao',
+              'leite',
+              'intolerancia',
+              'processo',
+              'rotulo',
+            ]}
+            currentClassName="active"
+            offset={-64}
+          >
+            <SidebarItem>
+              <CloseButton onClick={toggleSidebar}>
+                <AiIcons.AiOutlineClose />
+              </CloseButton>
+            </SidebarItem>
+            <SidebarItem>
+              <Link href="/#inicio">
+                <a className="sidebar__link" onClick={toggleSidebar}>
+                  <FiIcons.FiHome className="icon" /> início
+                </a>
+              </Link>
+            </SidebarItem>
+            <SidebarItem>
+              <Link href="/#apresentacao">
+                <a className="sidebar__link" onClick={toggleSidebar}>
+                  <FiIcons.FiInfo className="icon" />
+                  apresentação
+                </a>
+              </Link>
+            </SidebarItem>
+            <SidebarItem>
+              <Link href="/#leite">
+                <a className="sidebar__link" onClick={toggleSidebar}>
+                  <FiIcons.FiCoffee className="icon" /> leite
+                </a>
+              </Link>
+            </SidebarItem>
+            <SidebarItem>
+              <Link href="/#intolerancia">
+                <a className="sidebar__link" onClick={toggleSidebar}>
+                  <MdBlock className="icon" /> intolerância
+                </a>
+              </Link>
+            </SidebarItem>
+            <SidebarItem>
+              <Link href="/#processo">
+                <a className="sidebar__link" onClick={toggleSidebar}>
+                  <FiIcons.FiTruck className="icon" /> processo
+                </a>
+              </Link>
+            </SidebarItem>
+            <SidebarItem>
+              <Link href="/#rotulo">
+                <a className="sidebar__link" onClick={toggleSidebar}>
+                  <FiIcons.FiBox className="icon" />
+                  rótulo
+                </a>
+              </Link>
+            </SidebarItem>
+          </SidebarList>
+        </Nav>
+      )}
+    </>
   )
 }
 
